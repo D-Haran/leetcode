@@ -9,6 +9,7 @@ L             50
 C             100
 D             500
 M             1000
+
 For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
 
 Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
@@ -22,6 +23,7 @@ https://leetcode.com/problems/roman-to-integer/
 
 class Solution:
     def romanToInt(self, s: str) -> int:
+        # Create a dictionary to map the Roman numerals to their corresponding integer values.
         translations = {
             "I": 1,
             "V": 5,
@@ -31,7 +33,12 @@ class Solution:
             "D": 500,
             "M": 1000
         }
+
+        # Initialize the result to zero.
         res = 0
+
+        # Check for the presence of special cases in the string and add their corresponding integer values to the result.
+        # Remove the special cases from the string.
         if "IV" in s:
             res += 4
             s = s.replace("IV", "")
@@ -50,7 +57,17 @@ class Solution:
         if "CM" in s:
             res += 900
             s = s.replace("CM", "")
-        
+
+        # Iterate over the remaining string and add the corresponding integer values to the result.
         for i in s:
             res += translations[i]
+
+        # Return the result.
         return res
+
+    # Time Complexity: O(n)
+    # The time complexity is O(n) because we're iterating over the string once. 
+    # The replacements and dictionary lookups take constant time.
+
+    # Space Complexity: O(1)
+    # The space complexity is O(1) because we're not using any additional data structures whose size scales with input size.

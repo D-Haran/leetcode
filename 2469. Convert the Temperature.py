@@ -10,5 +10,13 @@ https://leetcode.com/problems/convert-the-temperature/description/
 
 class Solution:
     def convertTemperature(self, celsius: float) -> List[float]:
+        # Convert Celsius to Kelvin and Fahrenheit and store the results in `res`.
         res = [celsius+273.15, (celsius*1.80)+32]
+        # Return `res`.
         return res
+
+    # Time Complexity: O(1)
+    # The time complexity is O(1) because we're performing a constant number of operations. 
+
+    # Space Complexity: O(1)
+    # The space complexity is O(1) because we're not using any additional data structures whose size scales with the size of the input.
