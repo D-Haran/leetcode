@@ -23,7 +23,6 @@ https://leetcode.com/problems/roman-to-integer/
 
 class Solution:
     def romanToInt(self, s: str) -> int:
-        # Create a dictionary to map the Roman numerals to their corresponding integer values.
         translations = {
             "I": 1,
             "V": 5,
@@ -33,12 +32,8 @@ class Solution:
             "D": 500,
             "M": 1000
         }
-
-        # Initialize the result to zero.
         res = 0
 
-        # Check for the presence of special cases in the string and add their corresponding integer values to the result.
-        # Remove the special cases from the string.
         if "IV" in s:
             res += 4
             s = s.replace("IV", "")
@@ -58,16 +53,11 @@ class Solution:
             res += 900
             s = s.replace("CM", "")
 
-        # Iterate over the remaining string and add the corresponding integer values to the result.
         for i in s:
             res += translations[i]
 
-        # Return the result.
         return res
 
     # Time Complexity: O(n)
-    # The time complexity is O(n) because we're iterating over the string once. 
-    # The replacements and dictionary lookups take constant time.
 
     # Space Complexity: O(1)
-    # The space complexity is O(1) because we're not using any additional data structures whose size scales with input size.

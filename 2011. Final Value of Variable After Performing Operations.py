@@ -11,26 +11,16 @@ https://leetcode.com/problems/final-value-of-variable-after-performing-operation
 
 class Solution:
     def finalValueAfterOperations(self, operations: List[str]) -> int:
-        # Initialize `res` as 0. This will be used to store the value of X.
         res = 0
 
-        # Iterate over the elements in `operations`.
         for i in operations:
-            # If "--" is in the current operation...
             if "--" in i:
-                # Decrement `res` by 1.
                 res -= 1
-            # Otherwise if "++" is in the current operation...
             else:
-                # Increment `res` by 1.
                 res += 1
 
-        # Return `res`.
         return res
 
     # Time Complexity: O(n)
-    # The time complexity is O(n) because we're iterating over the operations once. 
-    # n is the number of operations.
 
     # Space Complexity: O(1)
-    # The space complexity is O(1) because we're not using any additional data structures whose size scales with the size of the input.
